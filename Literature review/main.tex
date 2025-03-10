@@ -1,0 +1,85 @@
+%%% Import Packages %%%
+\documentclass[11pt]{article}
+\usepackage{palatino}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{comment}
+\usepackage{datetime}
+\setlength{\parindent}{0pt}
+
+%%% Formatting %%%
+\lstset { %
+language=C++,
+backgroundcolor=\color{black!5}, % Set background color
+basicstyle=\footnotesize\ttfamily, % Basic font setting
+}
+\renewcommand{\baselinestretch}{1.1} % Reduce line spacing slightly
+\usepackage[margin=0.7in]{geometry} % Reduce page margins
+\setlength{\topmargin}{-0.8in} % Reduce top margin
+\setlength{\textwidth}{7.0in} % Expand text width
+\setlength{\oddsidemargin}{-0.25in} % Reduce side margins
+\setlength{\textheight}{9.5in} % Expand text height
+\pagestyle{empty}
+\def\pp{\par\noindent}
+\special{papersize=8.5in,11in}
+
+%%% Document %%%
+\begin{document}
+
+%%% Title %%%
+\centerline{\bf \Large CSE 6730 Final Project: Literature Review}
+\medskip
+\centerline{Xueyu Hu, Weining Wang, Honglin Liu}
+\centerline{{\small \today}}
+
+\section*{\small Project Description}
+This project employs \textbf{two-dimensional (2D) cellular automata (CA)} to simulate the \textbf{group shift (GS)} phenomenon. By leveraging the computational capabilities of CA, we aim to explore how localized interactions drive global behavioral shifts in group decision-making. Our model incorporates customized transition rules to capture the essence of GS, facilitating the analysis of emergent patterns and their dependence on initial conditions, such as personal sensitivity and average social distance, as well as neighborhood structures.
+
+\section*{\small Definition of Group Shift}
+Group shift (GS), also referred to as group polarization, describes the phenomenon where a group’s collective decision tends to become more extreme than the initial preferences of individual members. This effect arises due to social influences, including persuasive arguments, normative pressures, and the reinforcement of shared attitudes. As discussions progress, individuals align more strongly with the group, leading to either riskier or more conservative decision-making. Understanding GS is crucial for analyzing decision dynamics in fields such as political science, organizational behavior, and social psychology \cite{beaur_Decidability_2020, beaur_Effective_2023}.
+
+\section*{\small Overview of Cellular Automata}
+Cellular automata (CA) are grid-based computational models in which each cell updates its state based on predefined local rules, typically influenced by neighboring states. Despite their simplicity, CAs can generate highly complex global behaviors, making them fundamental tools for studying emergent patterns in nature.
+
+CA models provide valuable insights into various physical phenomena, including crystal growth, phase transitions, and pattern formation \cite{im_Investigating_2024, lebreton_Molecular_2018}. By encoding relevant chemical and physical interactions into local rules, researchers can simulate material properties and observe the development of macroscopic features, such as grain boundaries, surface textures, and emergent symmetries. Additionally, CA models are applied to reaction-diffusion systems, where localized reactions and diffusion collectively shape large-scale structures \cite{manukyan_Living_2017}.
+
+Beyond physics, CA applications extend to computer science and machine learning, supporting tasks such as image processing, edge detection, and shape classification \cite{lecun_Deep_2015}. The strong parallelism of CA makes it well-suited for distributed computing, enabling large-scale simulations to run efficiently on specialized hardware \cite{jouppi_InDatacenter_2017}.
+
+\section*{\small Neural Cellular Automata (NCA)}
+Neural cellular automata (NCA) extend traditional CA by integrating neural networks into the state transition function of each cell \cite{li_Deep_2023}. Instead of manually defining transition rules, NCAs enable adaptive behaviors through data-driven training, making them suitable for applications such as image classification, pattern regeneration, and anomaly detection.
+
+In materials science, NCA-based approaches allow researchers to model fine-scale molecular interactions, capturing how localized behaviors influence large-scale morphologies \cite{catrina_Learning_2024}. These methods have been employed in studies of crystal growth, magnetic domain formation, and metal solidification. Additionally, urban studies utilize CA principles to model city expansion under ecological and infrastructural constraints \cite{tang_Urban_2024}.
+
+\section*{\small Applications of CA in Natural Sciences}
+CA models are widely used in numerous scientific disciplines, particularly materials science \cite{zhi_Review_2024, raabe_Cellular_2002}. CA-based simulations have been utilized to study phase separation in photovoltaic cells, recrystallization dynamics, and grain growth \cite{peumans_Efficient_2003}. Hybrid models combining CA with techniques such as the Lattice Boltzmann Method (LBM) and Finite Element Method (FEM) have been developed to enhance microstructural simulations of alloys \cite{lee_Numerical_2022, meng_Multiscale_2022}.
+
+Beyond materials science, CA has been applied to biochemical systems and climate modeling \cite{kier_Cellular_2005, racz_Cellular_2003}. Researchers have employed CA to analyze climate factors, including the impact of climate change on water resources \cite{kassogue_Cellular_2019} and carbon cycle dynamics \cite{klaus_CarbonCycle_2011}, aiding in the development of policies addressing global climate challenges.
+
+\section*{\small Applications of CA in Sociology}
+While CA applications in sociology are relatively limited compared to other domains, existing studies highlight its potential in modeling various social phenomena. CA has been used to examine self-organized proportion regulation in biological and social systems, where local agent interactions give rise to emergent global behaviors \cite{beaur_Effective_2023}.
+
+Researchers such as Xia and Liu have explored CA’s capacity to simulate group decision-making dynamics, organizational behavior, and the evolution of collective actions in structured communities. Their findings emphasize the role of external influence, initial behavior distributions, and regulatory penalties in shaping the overall behavior of organized groups. Additionally, CA has been employed to simulate human responses in crisis scenarios, such as emergency evacuations and disaster management.
+
+Beyond direct social simulations, theoretical advancements in group cellular automata (GCA) provide a mathematical foundation for analyzing properties such as injectivity, surjectivity, and equicontinuity, with implications for symbolic dynamics and information theory \cite{beaur_Decidability_2020}. These studies underscore CA’s versatility in capturing complex interactions and emergent behaviors within social systems.
+
+\section*{\small Project Contributions}
+Compared with existing literature focusing on simulating GS via CA,  this project builds upon well-developed CA simulation methodologies while introducing key innovations:
+\begin{enumerate}[parsep=0pt, itemsep=0pt]
+    \item Incorporation of novel social dynamics hyperparameters and rules to refine group decision modeling, and we believe this will lead to more realistic result.
+    \item The consideration of social distance and individual movement dynamics and their effects on GS.
+    \item Integration of NCA to achieve a more granular representation of individual behaviors and therefore overall representation of GS.
+    \item Optimization of visualization mechanisms using parallelized divide-and-conquer algorithms or tabular dynamic programming (DP).
+\end{enumerate}
+
+\newpage
+\bibliographystyle{unsrt}  
+\bibliography{references}  
+
+\end{document}
+
